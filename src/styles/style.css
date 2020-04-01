@@ -93,7 +93,7 @@ footer {
 }
 .text-section-1col img,
 .text-section-2col img,
-.gallery img {
+.gallery-image {
   margin-bottom: 1rem;
 }
 .text-section-1col p:last-child,
@@ -102,7 +102,7 @@ footer {
 }
 .quote blockquote {
   display: block;
-  font-family: 'Lora', Serif; 
+  font-family: 'Amiri', Serif; 
   font-size: 36px;
   font-style: italic;
   font-weight: normal; 
@@ -116,7 +116,7 @@ footer {
 .quote blockquote:after {
   color: #e9e9e9;
   content: open-quote;
-  font-family: 'Lora', Serif;
+  font-family: 'Amiri', Serif;
   font-size: 2.5em;
   font-weight: 900;
   line-height: 0.1em;

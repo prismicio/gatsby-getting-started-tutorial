@@ -18,11 +18,11 @@ module.exports = {
         fonts: [
           {
             family: 'Lato',
-            variants: ['400', '400italics', '700', '700italics', '900'],
+            variants: ['400', '400i', '700', '700i', '900'],
           },
           {
-            family: 'Lora',
-            variants: ['400', '400italics', '700', '700italics'],
+            family: 'Amiri',
+            variants: ['400', '400i', '700', '700i'],
           },
         ],
       },

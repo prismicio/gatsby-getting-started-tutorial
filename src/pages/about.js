@@ -63,7 +63,9 @@ const About = ({ data }) => (
         <h2>Lorem ipsum dolor sit amet</h2>
         <div className="gallery">
           <div className="gallery-item">
-            <Img fluid={data.forrestAerialShot.childImageSharp.fluid} alt="Forrest aerial shot" />
+            <div className="gallery-image">
+              <Img fluid={data.forrestAerialShot.childImageSharp.fluid} alt="Forrest aerial shot" />
+            </div>
             <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
               Pellentesque aliquet nibh nec urna. In nisi neque, <em>aliquet vel</em>, dapibus
@@ -74,7 +76,9 @@ const About = ({ data }) => (
             </p>
           </div>
           <div className="gallery-item">
-            <Img fluid={data.mountainRange.childImageSharp.fluid} alt="Mountain range" />
+            <div className="gallery-image">
+              <Img fluid={data.mountainRange.childImageSharp.fluid} alt="Mountain range" />
+            </div>
             <p>
               Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus
               metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis,
