@@ -51,19 +51,50 @@ const Homepage = ({ data }) => (
         </div>
       </section>
 
-      <section className="content-section text-section-2col">
+      <section className="content-section text-section-1col">
         <p>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
           Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis
           vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
           eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
-        </p>
-        <p>
           Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero
           eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed
           lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum
           volutpat, lacus a ultrices sagittis.
         </p>
+      </section>
+
+      <section className="content-section quote">
+        <blockquote>Praesent elementum hendrerit tortor</blockquote>
+      </section>
+
+      <section className="image-gallery content-section">
+        <h2>Lorem ipsum dolor sit amet</h2>
+        <div className="gallery">
+          <div className="gallery-item">
+            <div className="gallery-image">
+              <Img fluid={data.mountainsAndFjords.childImageSharp.fluid} alt="Mountains and fjords" />
+            </div>
+            <p>
+              Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus
+              metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis,
+              gravida id, est.
+            </p>
+            <p className="gallery-link">
+              <Link to="/more-info">Learn More</Link>
+            </p>
+          </div>
+          <div className="gallery-item">
+            <div className="gallery-image">
+              <Img fluid={data.forrestAerialShot.childImageSharp.fluid} alt="Forrest aerial shot" />
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
+              Pellentesque aliquet nibh nec urna. In nisi neque, <em>aliquet vel</em>, dapibus
+              id, mattis vel, nisi.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
   </Layout>
@@ -82,6 +113,20 @@ query {
     }
   }
   mountainRange: file(relativePath: { eq: "mountain-range.jpeg" }) {
+    childImageSharp {
+      fluid(maxWidth: 727, maxHeight: 403) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  mountainsAndFjords: file(relativePath: { eq: "mountains-and-fjords.jpg" }) {
+    childImageSharp {
+      fluid(maxWidth: 727, maxHeight: 403) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+  forrestAerialShot: file(relativePath: { eq: "forrest-aerial-shot.jpeg" }) {
     childImageSharp {
       fluid(maxWidth: 727, maxHeight: 403) {
         ...GatsbyImageSharpFluid
