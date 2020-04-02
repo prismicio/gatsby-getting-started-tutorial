@@ -22,11 +22,13 @@ const MoreInfo = ({ data }) => (
         <h2>Morbi interdum mollis sapien</h2>
         <p>
           Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet,
+          {' '}
           <Link to="/">lectus arcu pulvinar risus</Link>, vitae <strong>facilisis libero dolor a purus</strong>
           . Sed vel lacus. Mauris nibh felis, <em>adipiscing varius</em>, adipiscing in,
-          <strong><em>lacinia vel</em></strong>, tellus. <em>Suspendisse ac urna</em>.
+          {' '}
+          <strong><em>lacinia vel</em></strong>, tellus. Suspendisse ac urna.
           Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis neget, gravida vitae,
-          ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl
+          ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.
         </p>
       </section>
 

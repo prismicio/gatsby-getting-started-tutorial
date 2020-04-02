@@ -81,7 +81,7 @@ const Homepage = ({ data }) => (
               gravida id, est.
             </p>
             <p className="gallery-link">
-              <Link to="/more-info">Learn More</Link>
+              <Link to="/about">Learn More</Link>
             </p>
           </div>
           <div className="gallery-item">
@@ -92,6 +92,9 @@ const Homepage = ({ data }) => (
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
               Pellentesque aliquet nibh nec urna. In nisi neque, <em>aliquet vel</em>, dapibus
               id, mattis vel, nisi.
+            </p>
+            <p className="gallery-link">
+              <Link to="/more-info">More Info</Link>
             </p>
           </div>
         </div>
