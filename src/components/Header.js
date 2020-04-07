@@ -1,12 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 const Header = ({ isHomepage }) => {
   const homepageClass = isHomepage ? 'homepage-header' : ''
   return (
     <header className={`site-header ${homepageClass}`}>
-      <a href="./index.html"><div className="logo">Example Site</div></a>
+      <Link to="/"><div className="logo">Example Site</div></Link>
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
@@ -16,14 +15,6 @@ const Header = ({ isHomepage }) => {
       </nav>
     </header>
   )
-}
-
-Header.propTypes = {
-  isHomepage: PropTypes.bool,
-}
-
-Header.defaultProps = {
-  isHomepage: false,
 }
 
 export default Header

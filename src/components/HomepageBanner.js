@@ -1,9 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-const HomepageBanner = ({ backgroundImage }) => (
-  <section className="homepage-banner" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${backgroundImage.publicURL})` }}>
+import homeBanner from '../images/home-banner.jpg'
+
+const HomepageBanner = () => (
+  <section
+    className="homepage-banner"
+    style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${homeBanner})` }}
+  >
     <div className="banner-content container">
       <h2 className="banner-title">John Doe</h2>
       <p className="banner-description">
@@ -15,13 +19,5 @@ const HomepageBanner = ({ backgroundImage }) => (
     </div>
   </section>
 )
-
-HomepageBanner.propTypes = {
-  backgroundImage: PropTypes.object,
-}
-
-HomepageBanner.defaultProps = {
-  backgroundImage: { publicURL: null },
-}
 
 export default HomepageBanner

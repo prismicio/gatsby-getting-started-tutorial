@@ -1,11 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 const SEO = ({ description, title }) => (
   <StaticQuery
-    query={SeoQuery}
+    query={`${SeoQuery}`}
     render={(data) => {
       const metaTitle = title
         ? `${title} | ${data.site.siteMetadata.title}`
@@ -32,15 +31,5 @@ query {
   }
 }
 `
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  title: PropTypes.string,
-}
-
-SEO.defaultProps = {
-  description: null,
-  title: null,
-}
 
 export default SEO
