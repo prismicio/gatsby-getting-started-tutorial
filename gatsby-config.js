@@ -32,6 +32,12 @@ module.exports = {
       resolve: 'gatsby-source-prismic-graphql',
       options: {
         repositoryName: 'your-repo-name',
+        pages: [{
+          type: 'Page',
+          match: '/:uid',
+          path: '/page-preview',
+          component: require.resolve('./src/templates/Page.js'),
+        }],
       },
     },
   ],
