@@ -20,5 +20,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          `Lato\:400,400,700,700i,900`,`Amiri\:400,400,700,700i`
+        ],
+      },
+    },
   ],
 }
