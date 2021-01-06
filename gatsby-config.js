@@ -4,6 +4,17 @@ module.exports = {
     description: 'Learn how to integrate Prismic into your Gatsby project.',
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'your-repo-name',
+        schemas: {
+          homepage: require("./custom_types/homepage.json"),
+          navigation: require("./custom_types/navigation.json"),
+          page: require("./custom_types/page.json"),
+        },
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
