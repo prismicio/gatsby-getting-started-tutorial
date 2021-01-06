@@ -1,3 +1,5 @@
+const linkResolver = require('./src/utils/linkResolver')
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby + Prismic Tutorial',
@@ -8,6 +10,7 @@ module.exports = {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'your-repo-name',
+        linkResolver: () => (doc) => linkResolver(doc),
         schemas: {
           homepage: require("./custom_types/homepage.json"),
           navigation: require("./custom_types/navigation.json"),
