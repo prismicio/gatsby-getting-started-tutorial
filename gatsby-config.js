@@ -1,25 +1,24 @@
+const linkResolver = require('./src/utils/linkResolver')
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby + Prismic Tutorial',
     description: 'Learn how to integrate Prismic into your Gatsby project.',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      resolve: 'gatsby-source-prismic',
       options: {
-        fonts: [
-          {
-            family: 'Lato',
-            variants: ['400', '400i', '700', '700i', '900'],
-          },
-          {
-            family: 'Amiri',
-            variants: ['400', '400i', '700', '700i'],
-          },
-        ],
+        repositoryName: 'frida77',
+        linkResolver: () => (doc) => linkResolver(doc),
+        schemas: {
+          homepage: require('./custom_types/homepage.json'),
+          navigation: require('./custom_types/navigation.json'),
+          page: require('./custom_types/page.json'),
+        },
       },
     },
+    'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -29,15 +28,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-prismic-graphql',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        repositoryName: 'your-repo-name',
-        pages: [{
-          type: 'Page',
-          match: '/:uid',
-          path: '/page-preview',
-          component: require.resolve('./src/templates/Page.js'),
-        }],
+        name: 'images',
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [`Lato\:400,400,700,700i,900`, `Amiri\:400,400,700,700i`],
       },
     },
   ],
