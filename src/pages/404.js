@@ -1,16 +1,25 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+import { withUnpublishedPreview } from 'gatsby-source-prismic'
+import { Page } from '../templates/Page'
+import { Homepage } from './index'
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="Not found" />
-    <div className="container">
-      <h1>Oh no!</h1>
-      <h3>We can't seem to find the page you're looking for.</h3>
-      <br />
-    </div>
-  </Layout>
+const Page404 = () => (
+  <div className="not-found">
+    <h1>404</h1>
+    <h3>The page you are looking for was not found</h3>
+    <p>
+      <a href="/">
+        <button type="button">Return to homepage</button>
+      </a>
+    </p>
+  </div>
 )
 
-export default NotFoundPage
+export default withUnpublishedPreview(Page404, {
+  templateMap: {
+    post: Page,
+    homepage: Homepage,
+    prismicPost: Page,
+    prismicHomepage: Homepage,
+  },
+})
