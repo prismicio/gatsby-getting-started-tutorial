@@ -14,7 +14,7 @@ const SEO = ({ description, title }) => (
       return (
         <Helmet>
           <title>{metaTitle}</title>
-          <meta name="description" content={metaDescription} />
+          <meta name='description' content={metaDescription} />
         </Helmet>
       )
     }}
@@ -22,14 +22,14 @@ const SEO = ({ description, title }) => (
 )
 
 const SeoQuery = graphql`
-query {
-  site {
-    siteMetadata {
-      title
-      description
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+      }
     }
   }
-}
 `
 
 export default SEO

@@ -15,18 +15,14 @@ const SliceZone = ({ sliceZone }) => {
   }
 
   const sliceZoneContent = sliceZone.map((slice, index) => {
-    const SliceComponent = sliceComponents[slice.type]
+    const SliceComponent = sliceComponents[slice.slice_type]
     if (SliceComponent) {
       return <SliceComponent slice={slice} key={`slice-${index}`} />
     }
     return null
   })
 
-  return (
-    <main className="container">
-      {sliceZoneContent}
-    </main>
-  )
+  return <main className='container'>{sliceZoneContent}</main>
 }
 
 export default SliceZone

@@ -3,4 +3,4 @@ const linkResolver = (doc) => {
   return '/'
 }
 
-export default linkResolver
+module.exports = linkResolver
