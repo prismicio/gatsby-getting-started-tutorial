@@ -28,33 +28,34 @@ const Homepage = ({ data }) => {
 
 export const query = graphql`
   query Homepage {
-  allPrismicHomepage {
-    edges {
-      node {
-        data {
-          banner_title {
-            raw
-          }
-          banner_description {
-            raw
-          }
-          banner_link {
-            uid
-            type
-          }
-          banner_link_label {
-            raw
-          }
-          banner_background {
-            url
-            thumbnails
-            alt
+    allPrismicHomepage {
+      edges {
+        node {
+          data {
+            banner_title {
+              raw
+            }
+            banner_description {
+              raw
+            }
+            banner_link {
+              url
+              type
+              uid
+            }
+            banner_link_label {
+              raw
+            }
+            banner_background {
+              url
+              thumbnails
+              alt
+            }
           }
         }
       }
     }
   }
-}
 `
 
 export default Homepage

@@ -1,6 +1,6 @@
 const linkResolver = (doc) => {
   if (doc.type === 'page') {
-    `/${doc.uid}`
+    return `/${doc.uid}`
   }
   return '/'
 }
