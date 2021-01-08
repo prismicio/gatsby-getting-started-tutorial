@@ -5,12 +5,12 @@ const Footer = () => (
   <footer>
     <p>
       Proudly published with{' '}
-      <a href='https://prismic.io' target='_blank' rel='noopener noreferrer'>
+      <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
         Prismic
       </a>
       <br />
-      <a href='https://prismic.io' target='_blank' rel='noopener noreferrer'>
-        <img className='footer-logo' src={prismicLogo} alt='Prismic logo' />
+      <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
+        <img className="footer-logo" src={prismicLogo} alt="Prismic logo" />
       </a>
     </p>
   </footer>

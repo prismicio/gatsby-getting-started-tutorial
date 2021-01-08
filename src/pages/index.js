@@ -19,7 +19,7 @@ const Homepage = ({ data }) => {
 
   return (
     <Layout isHomepage>
-      <SEO title='Home' />
+      <SEO title="Home" />
       <HomepageBanner bannerContent={bannerContent} />
       <SliceZone sliceZone={document.body} />
     </Layout>
@@ -27,7 +27,7 @@ const Homepage = ({ data }) => {
 }
 
 export const query = graphql`
-  {
+  query Homepage {
     allPrismicHomepage {
       edges {
         node {
@@ -40,6 +40,8 @@ export const query = graphql`
             }
             banner_link {
               url
+              type
+              uid
             }
             banner_link_label {
               raw
@@ -93,7 +95,7 @@ export const query = graphql`
                     raw
                   }
                   link {
-                    link_type
+                    url
                     type
                     uid
                   }
@@ -117,7 +119,7 @@ export const query = graphql`
                     raw
                   }
                   link {
-                    link_type
+                    url
                     type
                     uid
                   }

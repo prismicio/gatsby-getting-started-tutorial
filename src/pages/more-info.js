@@ -10,21 +10,21 @@ const MoreInfo = () => {
   return (
     <Layout>
       <SEO
-        title='More Info'
-        description='Want to learn more? Get the answer to all your questions here.'
+        title="More Info"
+        description="Want to learn more? Get the answer to all your questions here."
       />
 
-      <main className='container'>
-        <section className='full-width-image content-section'>
-          <img src={sunThroughTrees} alt='Sun through the trees' />
+      <main className="container">
+        <section className="full-width-image content-section">
+          <img src={sunThroughTrees} alt="Sun through the trees" />
         </section>
 
-        <section className='content-section text-section-1col'>
+        <section className="content-section text-section-1col">
           <h1>More Info</h1>
           <h2>Morbi interdum mollis sapien</h2>
           <p>
             Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet,{' '}
-            <Link to='/'>lectus arcu pulvinar risus</Link>, vitae{' '}
+            <Link to="/">lectus arcu pulvinar risus</Link>, vitae{' '}
             <strong>facilisis libero dolor a purus</strong>. Sed vel lacus.
             Mauris nibh felis, <em>adipiscing varius</em>, adipiscing in,{' '}
             <strong>
@@ -36,11 +36,11 @@ const MoreInfo = () => {
           </p>
         </section>
 
-        <section className='content-section quote'>
+        <section className="content-section quote">
           <blockquote>Etiam pellentesque mauris ut lectus</blockquote>
         </section>
 
-        <section className='content-section text-section-1col'>
+        <section className="content-section text-section-1col">
           <p>
             Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam
             sit amet mi ullamcorper vehicula. Integer adipiscing risus a sem.
@@ -52,11 +52,11 @@ const MoreInfo = () => {
           </p>
         </section>
 
-        <section className='full-width-image content-section'>
-          <img src={benchInForrest} alt='Bench in the forrest' />
+        <section className="full-width-image content-section">
+          <img src={benchInForrest} alt="Bench in the forrest" />
         </section>
 
-        <section className='content-section text-section-2col'>
+        <section className="content-section text-section-2col">
           <p>
             Praesent dapibus, neque id cursus faucibus, tortor neque egestas
             augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam

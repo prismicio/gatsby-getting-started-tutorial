@@ -22,7 +22,7 @@ const SliceZone = ({ sliceZone }) => {
     return null
   })
 
-  return <main className='container'>{sliceZoneContent}</main>
+  return <main className="container">{sliceZoneContent}</main>
 }
 
 export default SliceZone

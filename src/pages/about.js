@@ -11,16 +11,16 @@ const About = () => {
   return (
     <Layout>
       <SEO
-        title='About'
-        description='Learn more about us who we are and what we do.'
+        title="About"
+        description="Learn more about us who we are and what we do."
       />
 
-      <main className='container'>
-        <section className='full-width-image content-section'>
-          <img src={skiLiftChairs} alt='Ski lift chairs' />
+      <main className="container">
+        <section className="full-width-image content-section">
+          <img src={skiLiftChairs} alt="Ski lift chairs" />
         </section>
 
-        <section className='content-section text-section-2col'>
+        <section className="content-section text-section-2col">
           <h1>About Us</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
@@ -30,7 +30,7 @@ const About = () => {
           </p>
         </section>
 
-        <section className='content-section text-section-col-1'>
+        <section className="content-section text-section-col-1">
           <p>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
             hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque,
@@ -44,11 +44,11 @@ const About = () => {
           </p>
         </section>
 
-        <section className='content-section quote'>
+        <section className="content-section quote">
           <blockquote>Lorem ipsum dolor site amet</blockquote>
         </section>
 
-        <section className='content-section text-section-1col'>
+        <section className="content-section text-section-1col">
           <p>
             Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae
             luctus metus libero eu augue. Morbi purus libero, faucibus
@@ -68,22 +68,22 @@ const About = () => {
           </p>
         </section>
 
-        <section className='image-gallery content-section'>
+        <section className="image-gallery content-section">
           <h2>Lorem ipsum dolor sit amet</h2>
-          <div className='gallery'>
-            <div className='gallery-item'>
-              <img src={forrestAerialShot} alt='Forrest aerial shot' />
+          <div className="gallery">
+            <div className="gallery-item">
+              <img src={forrestAerialShot} alt="Forrest aerial shot" />
               <p>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
                 neque, <em>aliquet vel</em>, dapibus id, mattis vel, nisi.
               </p>
-              <p className='gallery-link'>
-                <Link to='/more-info'>Learn More</Link>
+              <p className="gallery-link">
+                <Link to="/more-info">Learn More</Link>
               </p>
             </div>
-            <div className='gallery-item'>
-              <img src={mountainRange} alt='Mountain range' />
+            <div className="gallery-item">
+              <img src={mountainRange} alt="Mountain range" />
               <p>
                 Sed egestas, ante et vulputate volutpat, eros pede semper est,
                 vitae luctus metus libero eu augue. Morbi purus libero, faucibus

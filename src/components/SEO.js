@@ -14,7 +14,7 @@ const SEO = ({ description, title }) => (
       return (
         <Helmet>
           <title>{metaTitle}</title>
-          <meta name='description' content={metaDescription} />
+          <meta name="description" content={metaDescription} />
         </Helmet>
       )
     }}
