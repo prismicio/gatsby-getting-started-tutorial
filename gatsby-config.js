@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: 'frida77',
+        repositoryName: 'your-repo-name',
         accessToken: '',
         releaseID: '',
         prismicToolbar: true,

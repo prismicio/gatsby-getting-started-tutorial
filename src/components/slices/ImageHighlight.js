@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
-import linkResolver from './../../utils/linkResolver'
 
 const ImageHighlight = ({ slice }) => (
   <section className="highlight content-section">
@@ -10,7 +9,7 @@ const ImageHighlight = ({ slice }) => (
       <RichText render={slice.primary.description.raw} />
       {slice.primary.link && slice.primary.link ? (
         <p>
-          <Link to={linkResolver(slice.primary.link)}>
+          <Link to={slice.primary.link.url}>
             {RichText.asText(slice.primary.link_label.raw)}
           </Link>
         </p>

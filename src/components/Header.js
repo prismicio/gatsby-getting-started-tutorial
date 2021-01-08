@@ -8,7 +8,9 @@ const Header = ({ isHomepage, navigation }) => {
 
   return (
     <header className={`site-header ${homepageClass}`}>
-      <Link to="/"><div className="logo">Example Site</div></Link>
+      <Link to="/">
+        <div className="logo">Example Site</div>
+      </Link>
       <nav>
         <ul>
           {topNav.map((navItem, index) => {
@@ -27,18 +29,20 @@ const Header = ({ isHomepage, navigation }) => {
 }
 
 export const query = graphql`
-fragment HeaderQuery on PrismicNavigation {
-  data {
-    top_navigation {
-      link {
-        url
-      }
-      link_label {
-        raw
+  fragment HeaderQuery on PrismicNavigation {
+    data {
+      top_navigation {
+        link {
+          type
+          uid
+          url
+        }
+        link_label {
+          raw
+        }
       }
     }
   }
-}
 `
 
 export default Header
