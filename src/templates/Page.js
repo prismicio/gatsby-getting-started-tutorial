@@ -71,7 +71,7 @@ export const query = graphql`
                     raw
                   }
                   link {
-                    link_type
+                    url
                     type
                     uid
                   }
@@ -95,7 +95,7 @@ export const query = graphql`
                     raw
                   }
                   link {
-                    link_type
+                    url
                     type
                     uid
                   }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
-import linkResolver from './../../utils/linkResolver'
 
 const ImageGallery = ({ slice }) => {
   return (
@@ -14,7 +13,7 @@ const ImageGallery = ({ slice }) => {
             <RichText render={galleryItem.image_description.raw} />
             {galleryItem.link && galleryItem.link ? (
               <p className="gallery-link">
-                <Link to={linkResolver(galleryItem.link)}>
+                <Link to={galleryItem.link.url}>
                   {RichText.asText(galleryItem.link_label.raw)}
                 </Link>
               </p>

@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: 'frida77',
+        repositoryName: 'your-repo-name',
         linkResolver: () => (doc) => linkResolver(doc),
         schemas: {
           homepage: require('./custom_types/homepage.json'),
