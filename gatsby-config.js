@@ -9,9 +9,9 @@ module.exports = {
       options: {
         repositoryName: 'your-repo-name',
         schemas: {
-          homepage: require("./custom_types/homepage.json"),
-          navigation: require("./custom_types/navigation.json"),
-          page: require("./custom_types/page.json"),
+          homepage: require('./custom_types/homepage.json'),
+          navigation: require('./custom_types/navigation.json'),
+          page: require('./custom_types/page.json'),
         },
       },
     },
@@ -34,9 +34,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: [
-          `Lato\:400,400,700,700i,900`,`Amiri\:400,400,700,700i`
-        ],
+        fonts: [`Lato\:400,400,700,700i,900`, `Amiri\:400,400,700,700i`],
       },
     },
   ],
