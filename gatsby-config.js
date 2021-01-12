@@ -7,6 +7,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
+        /* Make sure that you update the repositoryName 
+        * to match the URL  of your Prismic repository */
         repositoryName: 'your-repo-name',
         schemas: {
            homepage: require("./custom_types/homepage.json"),
