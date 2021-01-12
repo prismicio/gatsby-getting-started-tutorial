@@ -6,9 +6,8 @@ import HomepageBanner from '../components/HomepageBanner'
 import MainContent from '../components/MainContent'
 
 const Homepage = ({ data }) => {
-  const prismicContent = data.prismic.allHomepages.edges[0]
-  if (!prismicContent) return null
-  const document = prismicContent.node
+  if (!data) return null
+  const document = data.allPrismicHomepage.edges[0].node.data
 
   const bannerContent = {
     title: document.banner_title,
@@ -28,29 +27,35 @@ const Homepage = ({ data }) => {
 }
 
 export const query = graphql`
-{
-  prismic {
-    allHomepages {
+  query Homepage {
+    allPrismicHomepage {
       edges {
         node {
-          banner_title
-          banner_description
-          banner_link {
-            _linkType
-            ... on PRISMIC_Page {
-              _meta {
-                uid
-                type
-              }
+          data {
+            banner_title {
+              raw
+            }
+            banner_description {
+              raw
+            }
+            banner_link {
+              url
+              type
+              uid
+            }
+            banner_link_label {
+              raw
+            }
+            banner_background {
+              url
+              thumbnails
+              alt
             }
           }
-          banner_link_label
-          banner_background
         }
       }
     }
   }
-}
 `
 
 export default Homepage
