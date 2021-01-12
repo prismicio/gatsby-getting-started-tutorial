@@ -5,21 +5,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [
-          {
-            family: 'Lato',
-            variants: ['400', '400i', '700', '700i', '900'],
-          },
-          {
-            family: 'Amiri',
-            variants: ['400', '400i', '700', '700i'],
-          },
-        ],
-      },
-    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -29,9 +14,18 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-prismic-graphql',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        repositoryName: 'your-repo-name',
+        name: 'images',
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          `Lato\:400,400,700,700i,900`,`Amiri\:400,400,700,700i`
+        ],
       },
     },
   ],
