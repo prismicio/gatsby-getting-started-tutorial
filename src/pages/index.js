@@ -17,8 +17,10 @@ const Homepage = ({ data }) => {
     background: document.banner_background,
   }
 
+  const prismicNavigation = data.prismicNavigation
+
   return (
-    <Layout isHomepage>
+    <Layout isHomepage navigation={prismicNavigation}>
       <SEO title="Home" />
       <HomepageBanner bannerContent={bannerContent} />
       <SliceZone sliceZone={document.body} />
@@ -132,6 +134,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    prismicNavigation {
+      ...HeaderQuery
     }
   }
 `

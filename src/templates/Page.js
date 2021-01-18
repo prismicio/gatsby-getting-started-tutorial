@@ -6,15 +6,15 @@ import SliceZone from '../components/SliceZone'
 
 const Page = ({ data }) => {
   if (!data) return null
-  console.log(data)
   const document = data.allPrismicPage.edges[0].node
+  const prismicNavigation = data.prismicNavigation
 
   const capitalizeFirstLetter = (input) => {
     return input[0].toUpperCase() + input.slice(1)
   }
 
   return (
-    <Layout>
+    <Layout navigation={prismicNavigation}>
       <SEO title={capitalizeFirstLetter(document.uid)} />
       <SliceZone sliceZone={document.data.body} />
     </Layout>
@@ -109,6 +109,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    prismicNavigation {
+      ...HeaderQuery
     }
   }
 `
