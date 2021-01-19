@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import HomepageBanner from '../components/HomepageBanner'
 import SliceZone from '../components/SliceZone'
+import { withPreview } from 'gatsby-source-prismic'
 
 const Homepage = ({ data }) => {
   if (!data) return null
@@ -140,5 +141,4 @@ export const query = graphql`
     }
   }
 `
-
-export default Homepage
+export default withPreview(Homepage)
