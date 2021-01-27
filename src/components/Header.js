@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
 const Header = ({ isHomepage, navigation }) => {
+  if (!navigation) return null
   const homepageClass = isHomepage ? 'homepage-header' : ''
   const topNav = navigation.data.top_navigation
 
