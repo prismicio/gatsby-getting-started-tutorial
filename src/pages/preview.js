@@ -1,20 +1,26 @@
 import * as React from 'react'
 import { withPreviewResolver } from 'gatsby-source-prismic'
-import { linkResolver } from '../example_path_to_linkResolver'
-import { Layout } from '../components/Layout'
+import { graphql, useStaticQuery } from 'gatsby'
+import linkResolver from '../utils/linkResolver'
 
-const PreviewPage = ({ isPreview, isLoading }) => {
-  const previewText = isPreview ? 'Loading' : 'Not a preview!'
-  return (
-    <Layout>
-      <p>{previewText}</p>
-    </Layout>
-  )
+const PreviewPage = ({ isPreview }) => {
+  if (isPreview === false) return 'Not a preview!'
+
+  return (<p>Loading</p>)
 }
 
-export default withPreviewResolver(PreviewPage, {
-    /* Make sure that you update the repositoryName 
-    * to match the name of your Prismic repository */
-  repositoryName: 'your-repo-name',
-  linkResolver,
-})
+export default (props) => {
+  const data = useStaticQuery(graphql`query {
+    sitePlugin(name: {eq: "gatsby-source-prismic"}) {
+      pluginOptions {
+        repositoryName
+      }
+    }
+  }
+  `)
+  const { repositoryName } = data.sitePlugin.pluginOptions
+  return withPreviewResolver(PreviewPage, {
+    repositoryName,
+    linkResolver: () => linkResolver,
+  })(props)
+}

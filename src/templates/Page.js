@@ -1,11 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { withPreview } from 'gatsby-source-prismic'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import SliceZone from '../components/SliceZone'
-import { withPreview } from 'gatsby-source-prismic'
 
-const Page = ({ data }) => {
+export const PageTemplate = ({ data }) => {
   if (!data) return null
   const document = data.allPrismicPage.edges[0].node
   const prismicNavigation = data.prismicNavigation
@@ -117,4 +117,4 @@ export const query = graphql`
   }
 `
 
-export default withPreview(Page)
+export default withPreview(PageTemplate)
