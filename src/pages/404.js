@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+// import { graphql } from 'gatsby'
 import {
   withPrismicUnpublishedPreview,
   componentResolverFromMap,
@@ -10,12 +10,12 @@ import linkResolver from '../utils/linkResolver'
 import Page from './../templates/Page'
 import HomeTemplate from './../pages/index'
 
-const NotFoundPage = ({ data }) => {
-  const page = data.prismicPage
+const NotFoundPage = () => {
+  // const page = data.prismicPage
 
   return (
     <div>
-      <h1>{page.uid}</h1>
+      <h1>Not found</h1>
     </div>
   )
 }
@@ -31,11 +31,11 @@ export default withPrismicUnpublishedPreview(NotFoundPage, [
   },
 ])
 
-export const query = graphql`
-  query NotFoundPage {
-    prismicPage(id: { eq: "404" }) {
-      _previewable
-      uid
-    }
-  }
-`
+// export const query = graphql`
+//   query NotFoundPage {
+//     prismicPage(uid: { eq: "404" }) {
+//       _previewable
+//       uid
+//     }
+//   }
+// `

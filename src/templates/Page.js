@@ -10,7 +10,7 @@ import linkResolver from '../utils/linkResolver'
 
 const Page = ({ data }) => {
   if (!data) return null
-  const doc = data.allPrismicPage.nodes[0]
+  const doc = data.prismicPage
   const prismicNavigation = data.prismicNavigation
   // const { repositoryName } = data.sitePlugin.pluginOptions
 
@@ -28,82 +28,81 @@ const Page = ({ data }) => {
 
 export const query = graphql`
   query PageQuery($uid: String) {
-    allPrismicPage(filter: { uid: { eq: $uid } }) {
-      nodes {
-        uid
-        data {
-          body {
-            ... on PrismicPageDataBodyText {
-              slice_type
-              primary {
-                columns
-                content {
-                  raw
-                }
+    prismicPage(uid: { eq: $uid }) {
+      _previewable
+      uid
+      data {
+        body {
+          ... on PrismicPageDataBodyText {
+            slice_type
+            primary {
+              columns
+              content {
+                raw
               }
             }
-            ... on PrismicPageDataBodyQuote {
-              slice_type
-              primary {
-                quote {
-                  raw
-                }
+          }
+          ... on PrismicPageDataBodyQuote {
+            slice_type
+            primary {
+              quote {
+                raw
               }
             }
-            ... on PrismicPageDataBodyFullWidthImage {
-              slice_type
-              primary {
-                full_width_image {
-                  url
-                }
+          }
+          ... on PrismicPageDataBodyFullWidthImage {
+            slice_type
+            primary {
+              full_width_image {
+                url
               }
             }
-            ... on PrismicPageDataBodyImageGallery {
-              slice_type
-              primary {
-                gallery_title {
-                  raw
-                }
-              }
-              items {
-                image {
-                  url
-                  alt
-                }
-                image_description {
-                  raw
-                }
-                link {
-                  url
-                  type
-                  uid
-                }
-                link_label {
-                  raw
-                }
+          }
+          ... on PrismicPageDataBodyImageGallery {
+            slice_type
+            primary {
+              gallery_title {
+                raw
               }
             }
-            ... on PrismicPageDataBodyImageHighlight {
-              slice_type
-              primary {
-                featured_image {
-                  url
-                  alt
-                }
-                title {
-                  raw
-                }
-                description {
-                  raw
-                }
-                link {
-                  url
-                  type
-                  uid
-                }
-                link_label {
-                  raw
-                }
+            items {
+              image {
+                url
+                alt
+              }
+              image_description {
+                raw
+              }
+              link {
+                url
+                type
+                uid
+              }
+              link_label {
+                raw
+              }
+            }
+          }
+          ... on PrismicPageDataBodyImageHighlight {
+            slice_type
+            primary {
+              featured_image {
+                url
+                alt
+              }
+              title {
+                raw
+              }
+              description {
+                raw
+              }
+              link {
+                url
+                type
+                uid
+              }
+              link_label {
+                raw
               }
             }
           }
@@ -113,7 +112,7 @@ export const query = graphql`
     prismicNavigation {
       ...HeaderQuery
     }
-    sitePlugin(name: {eq: "gatsby-source-prismic"}) {
+    sitePlugin(name: { eq: "gatsby-source-prismic" }) {
       pluginOptions {
         repositoryName
       }

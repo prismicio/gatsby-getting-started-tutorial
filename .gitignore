@@ -11,10 +11,6 @@ yarn-error.log*
 # Dependency directories
 node_modules/
 
-# eslint files
-.eslintcache
-.eslintrc.js
-
 # gatsby files
 .cache/
 public
