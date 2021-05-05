@@ -1,16 +1,19 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
+
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import HomepageBanner from '../components/HomepageBanner'
 import SliceZone from '../components/SliceZone'
+
 import linkResolver from '../utils/linkResolver'
 
 const HomeTemplate = ({ data }) => {
   if (!data) return null
   const doc = data.prismicHomepage.data
   const prismicNavigation = data.prismicNavigation
+    // const { repositoryName } = data.sitePlugin.pluginOptions
   
   const bannerContent = {
     title: doc.banner_title,
@@ -131,12 +134,17 @@ export const query = graphql`
     prismicNavigation {
       ...HeaderQuery
     }
+    sitePlugin(name: {eq: "gatsby-source-prismic"}) {
+      pluginOptions {
+        repositoryName
+      }
+    }
   }
 `
 
 export default withPrismicPreview(HomeTemplate, [
   {
-    repositoryName: "gatsbygts",
+    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
     linkResolver,
   },
 ])

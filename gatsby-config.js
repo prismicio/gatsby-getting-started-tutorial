@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve:"gatsby-plugin-prismic-previews",
       options:{
-        repositoryName: process.env.PRISMIC_REPO_NAME,
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
         toolbar:"new"
       }
     },
@@ -21,7 +21,7 @@ module.exports = {
       options: {
         /* Make sure that you update the repositoryName 
         * to match the name of your Prismic repository */
-        repositoryName: process.env.PRISMIC_REPO_NAME,
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
         linkResolver: (doc) => linkResolver(doc),
         schemas: {
            homepage: require("./custom_types/homepage.json"),

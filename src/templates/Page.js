@@ -5,7 +5,8 @@ import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import SliceZone from '../components/SliceZone'
-import { linkResolver } from '../utils/linkResolver'
+
+import linkResolver from '../utils/linkResolver'
 
 const Page = ({ data }) => {
   if (!data) return null
@@ -37,7 +38,7 @@ export const query = graphql`
               primary {
                 columns
                 content {
-                  text
+                  raw
                 }
               }
             }
@@ -45,7 +46,7 @@ export const query = graphql`
               slice_type
               primary {
                 quote {
-                  text
+                  raw
                 }
               }
             }
@@ -61,7 +62,7 @@ export const query = graphql`
               slice_type
               primary {
                 gallery_title {
-                  text
+                  raw
                 }
               }
               items {
@@ -122,7 +123,7 @@ export const query = graphql`
 
 export default withPrismicPreview(Page, [
   {
-    repositoryName: "gatsbygts",
+    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
     linkResolver,
   },
 ])
