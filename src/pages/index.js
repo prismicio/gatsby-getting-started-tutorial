@@ -1,135 +1,127 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { withPreview } from 'gatsby-source-prismic'
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import HomepageBanner from '../components/HomepageBanner'
 import SliceZone from '../components/SliceZone'
+import linkResolver from '../utils/linkResolver'
 
-export const HomeTemplate = ({ data }) => {
+const HomeTemplate = ({ data }) => {
   if (!data) return null
-  const document = data.allPrismicHomepage.edges[0].node.data
-
-  const bannerContent = {
-    title: document.banner_title,
-    description: document.banner_description,
-    link: document.banner_link,
-    linkLabel: document.banner_link_label,
-    background: document.banner_background,
-  }
-
+  const doc = data.prismicHomepage.data
   const prismicNavigation = data.prismicNavigation
+  
+  const bannerContent = {
+    title: doc.banner_title,
+    description: doc.banner_description,
+    link: doc.banner_link,
+    linkLabel: doc.banner_link_label,
+    background: doc.banner_background,
+  }
 
   return (
     <Layout isHomepage navigation={prismicNavigation}>
       <SEO title="Home" />
       <HomepageBanner bannerContent={bannerContent} />
-      <SliceZone sliceZone={document.body} />
+      <SliceZone sliceZone={doc.body} />
     </Layout>
   )
 }
 
 export const query = graphql`
-  query Homepage {
-    allPrismicHomepage {
-      edges {
-        node {
-          data {
-            banner_title {
-              raw
-            }
-            banner_description {
-              raw
-            }
-            banner_link {
-              url
-              type
-              uid
-            }
-            banner_link_label {
-              raw
-            }
-            banner_background {
-              url
-              thumbnails
-              alt
-            }
-            body {
-              ... on PrismicHomepageBodyText {
-                slice_type
-                primary {
-                  columns
-                  content {
-                    raw
-                  }
-                }
+  query MyQuery {
+    prismicHomepage {
+      data {
+        banner_title {
+          raw
+        }
+        banner_description {
+          raw
+        }
+        banner_link {
+          url
+          type
+          uid
+        }
+        banner_link_label {
+          raw
+        }
+        banner_background {
+          url
+        }
+        body {
+          ... on PrismicHomepageDataBodyText {
+            slice_type
+            primary {
+              columns
+              content {
+                raw
               }
-              ... on PrismicHomepageBodyQuote {
-                slice_type
-                primary {
-                  quote {
-                    raw
-                  }
-                }
+            }
+          }
+          ... on PrismicHomepageDataBodyQuote {
+            slice_type
+            primary {
+              quote {
+                raw
               }
-              ... on PrismicHomepageBodyFullWidthImage {
-                slice_type
-                primary {
-                  full_width_image {
-                    url
-                    thumbnails
-                  }
-                }
+            }
+          }
+          ... on PrismicHomepageDataBodyFullWidthImage {
+            slice_type
+            primary {
+              full_width_image {
+                url
+                alt
               }
-              ... on PrismicHomepageBodyImageGallery {
-                slice_type
-                primary {
-                  gallery_title {
-                    raw
-                  }
-                }
-                items {
-                  image {
-                    url
-                    thumbnails
-                    alt
-                  }
-                  image_description {
-                    raw
-                  }
-                  link {
-                    url
-                    type
-                    uid
-                  }
-                  link_label {
-                    raw
-                  }
-                }
+            }
+          }
+          ... on PrismicHomepageDataBodyImageGallery {
+            slice_type
+            primary {
+              gallery_title {
+                raw
               }
-              ... on PrismicHomepageBodyImageHighlight {
-                slice_type
-                primary {
-                  featured_image {
-                    url
-                    thumbnails
-                    alt
-                  }
-                  title {
-                    raw
-                  }
-                  description {
-                    raw
-                  }
-                  link {
-                    url
-                    type
-                    uid
-                  }
-                  link_label {
-                    raw
-                  }
-                }
+            }
+            items {
+              image {
+                url
+                alt
+              }
+              image_description {
+                raw
+              }
+              link {
+                url
+                type
+                uid
+              }
+              link_label {
+                raw
+              }
+            }
+          }
+          ... on PrismicHomepageDataBodyImageHighlight {
+            slice_type
+            primary {
+              featured_image {
+                url
+                alt
+              }
+              title {
+                raw
+              }
+              description {
+                raw
+              }
+              link {
+                url
+                type
+                uid
+              }
+              link_label {
+                raw
               }
             }
           }
@@ -141,4 +133,10 @@ export const query = graphql`
     }
   }
 `
-export default withPreview(HomeTemplate)
+
+export default withPrismicPreview(HomeTemplate, [
+  {
+    repositoryName: "gatsbygts",
+    linkResolver,
+  },
+])

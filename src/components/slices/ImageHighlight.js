@@ -7,13 +7,11 @@ const ImageHighlight = ({ slice }) => (
     <div className="highlight-left">
       <RichText render={slice.primary.title.raw} />
       <RichText render={slice.primary.description.raw} />
-      {slice.primary.link && slice.primary.link ? (
-        <p>
-          <Link to={slice.primary.link.url}>
-            {RichText.asText(slice.primary.link_label.raw)}
-          </Link>
-        </p>
-      ) : null}
+      <p>
+        <Link to={slice.primary.link.url}>
+          {RichText.asText(slice.primary.link_label.raw)}
+        </Link>
+      </p>
     </div>
     <div className="highlight-right">
       <img

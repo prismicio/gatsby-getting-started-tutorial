@@ -1,4 +1,7 @@
 const linkResolver = require('./src/utils/linkResolver')
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -7,13 +10,19 @@ module.exports = {
   },
   plugins: [
     {
+      resolve:"gatsby-plugin-prismic-previews",
+      options:{
+        repositoryName: process.env.PRISMIC_REPO_NAME,
+        toolbar:"new"
+      }
+    },
+    {
       resolve: 'gatsby-source-prismic',
       options: {
         /* Make sure that you update the repositoryName 
         * to match the name of your Prismic repository */
-        repositoryName: 'your-repo-name',
-        linkResolver: () => linkResolver,
-        prismicToolbar: true,
+        repositoryName: process.env.PRISMIC_REPO_NAME,
+        linkResolver: (doc) => linkResolver(doc),
         schemas: {
            homepage: require("./custom_types/homepage.json"),
            navigation: require("./custom_types/navigation.json"),

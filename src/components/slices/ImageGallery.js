@@ -11,13 +11,11 @@ const ImageGallery = ({ slice }) => {
           <div className="gallery-item" key={`gallery-item=${index}`}>
             <img src={galleryItem.image.url} alt={galleryItem.image.alt} />
             <RichText render={galleryItem.image_description.raw} />
-            {galleryItem.link && galleryItem.link ? (
-              <p className="gallery-link">
-                <Link to={galleryItem.link.url}>
-                  {RichText.asText(galleryItem.link_label.raw)}
-                </Link>
-              </p>
-            ) : null}
+            <p className="gallery-link">
+              <Link to={galleryItem.link.url}>
+                {RichText.asText(galleryItem.link_label.raw)}
+              </Link>
+            </p>
           </div>
         ))}
       </div>
