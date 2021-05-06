@@ -1,19 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-
 import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+import Seo from '../components/Seo'
 import HomepageBanner from '../components/HomepageBanner'
 import SliceZone from '../components/SliceZone'
-
 import linkResolver from '../utils/linkResolver'
 
 const HomeTemplate = ({ data }) => {
   if (!data) return null
   const doc = data.prismicHomepage.data
   const prismicNavigation = data.prismicNavigation
-    // const { repositoryName } = data.sitePlugin.pluginOptions
   
   const bannerContent = {
     title: doc.banner_title,
@@ -25,7 +22,7 @@ const HomeTemplate = ({ data }) => {
 
   return (
     <Layout isHomepage navigation={prismicNavigation}>
-      <SEO title="Home" />
+      <Seo title="Home" />
       <HomepageBanner bannerContent={bannerContent} />
       <SliceZone sliceZone={doc.body} />
     </Layout>
@@ -35,6 +32,7 @@ const HomeTemplate = ({ data }) => {
 export const query = graphql`
   query MyQuery {
     prismicHomepage {
+      _previewable
       data {
         banner_title {
           raw
@@ -133,11 +131,6 @@ export const query = graphql`
     }
     prismicNavigation {
       ...HeaderQuery
-    }
-    sitePlugin(name: {eq: "gatsby-source-prismic"}) {
-      pluginOptions {
-        repositoryName
-      }
     }
   }
 `

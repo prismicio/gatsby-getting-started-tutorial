@@ -17,3 +17,5 @@ public
 
 # Project files
 .vscode/
+.env.development
+.env.production
