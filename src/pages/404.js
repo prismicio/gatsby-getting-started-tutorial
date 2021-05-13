@@ -21,7 +21,7 @@ export default withPrismicUnpublishedPreview(NotFoundPage, [
     linkResolver,
     componentResolver: componentResolverFromMap({
       page: PageTemplate,
-      homepage: HomeTemplate
+      homepage: HomeTemplate,
     }),
   },
 ])

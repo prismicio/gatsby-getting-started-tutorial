@@ -11,7 +11,7 @@ const HomeTemplate = ({ data }) => {
   if (!data) return null
   const doc = data.prismicHomepage.data
   const prismicNavigation = data.prismicNavigation
-  
+
   const bannerContent = {
     title: doc.banner_title,
     description: doc.banner_description,

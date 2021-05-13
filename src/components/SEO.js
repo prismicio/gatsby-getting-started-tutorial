@@ -22,14 +22,14 @@ const Seo = ({ description, title }) => (
 )
 
 const SeoQuery = graphql`
-query {
-  site {
-    siteMetadata {
-      title
-      description
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+      }
     }
   }
-}
 `
 
 export default Seo
