@@ -21,11 +21,13 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,css,md}\"",
     "start": "npm run clean && npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "devDependencies": {
-    "eslint": "^7.25.0"
+    "eslint": "^7.25.0",
+    "prettier": "^2.3.0"
   }
 }
