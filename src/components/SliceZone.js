@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import { FullWidthImage } from './slices/FullWidthImage'
-import { ImageGallery } from './slices/ImageGallery'
-import { ImageHighlight } from './slices/ImageHighlight'
-import { Quote } from './slices/Quote'
-import { Text } from './slices/Text'
+import { FullWidthImage } from '../slices/FullWidthImage'
+import { ImageGallery } from '../slices/ImageGallery'
+import { ImageHighlight } from '../slices/ImageHighlight'
+import { Quote } from '../slices/Quote'
+import { Text } from '../slices/Text'
 
 export const SliceZone = ({ sliceZone }) => {
   const sliceComponents = {

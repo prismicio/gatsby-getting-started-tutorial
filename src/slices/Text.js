@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
-import { linkResolver } from './../../utils/linkResolver'
+import { linkResolver } from '../utils/linkResolver'
 
 export const Text = ({ slice }) => {
   const columnClass =
