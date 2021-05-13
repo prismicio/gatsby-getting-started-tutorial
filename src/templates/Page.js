@@ -6,19 +6,19 @@ import Seo from '../components/Seo'
 import SliceZone from '../components/SliceZone'
 import linkResolver from '../utils/linkResolver'
 
+const capitalizeFirstLetter = (input) => {
+  return input[0].toUpperCase() + input.slice(1)
+}
+
 const PageTemplate = ({ data }) => {
   if (!data) return null
-  const doc = data.prismicPage
-  const prismicNavigation = data.prismicNavigation
 
-  const capitalizeFirstLetter = (input) => {
-    return input[0].toUpperCase() + input.slice(1)
-  }
+  const page = data.prismicPage
 
   return (
-    <Layout navigation={prismicNavigation}>
-      <Seo title={capitalizeFirstLetter(doc.uid)} />
-      <SliceZone sliceZone={doc.data.body} />
+    <Layout>
+      <Seo title={capitalizeFirstLetter(page.uid)} />
+      <SliceZone sliceZone={page.data.body} />
     </Layout>
   )
 }
@@ -105,9 +105,6 @@ export const query = graphql`
           }
         }
       }
-    }
-    prismicNavigation {
-      ...HeaderQuery
     }
   }
 `

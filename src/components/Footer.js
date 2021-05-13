@@ -1,4 +1,5 @@
 import React from 'react'
+
 import prismicLogo from '../images/logo-prismic.svg'
 
 const Footer = () => (

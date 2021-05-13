@@ -10,7 +10,6 @@ import linkResolver from '../utils/linkResolver'
 const HomeTemplate = ({ data }) => {
   if (!data) return null
   const doc = data.prismicHomepage.data
-  const prismicNavigation = data.prismicNavigation
 
   const bannerContent = {
     title: doc.banner_title,
@@ -21,7 +20,7 @@ const HomeTemplate = ({ data }) => {
   }
 
   return (
-    <Layout isHomepage navigation={prismicNavigation}>
+    <Layout isHomepage={true}>
       <Seo title="Home" />
       <HomepageBanner bannerContent={bannerContent} />
       <SliceZone sliceZone={doc.body} />
@@ -128,9 +127,6 @@ export const query = graphql`
           }
         }
       }
-    }
-    prismicNavigation {
-      ...HeaderQuery
     }
   }
 `

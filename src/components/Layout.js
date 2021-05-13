@@ -1,10 +1,11 @@
 import React from 'react'
+
 import Header from './Header'
 import Footer from './Footer'
 
-const Layout = ({ isHomepage, children, navigation }) => (
+const Layout = ({ isHomepage, children }) => (
   <>
-    <Header isHomepage={isHomepage} navigation={navigation} />
+    <Header isHomepage={isHomepage} />
     {children}
     <Footer />
   </>
