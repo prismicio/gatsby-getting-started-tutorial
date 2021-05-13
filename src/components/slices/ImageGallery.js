@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
 export const ImageGallery = ({ slice }) => {
@@ -22,3 +22,54 @@ export const ImageGallery = ({ slice }) => {
     </section>
   )
 }
+
+export const query = graphql`
+  fragment PageDataBodyImageGallery on PrismicPageDataBodyImageGallery {
+    primary {
+      gallery_title {
+        raw
+      }
+    }
+    items {
+      image {
+        url
+        alt
+      }
+      image_description {
+        raw
+      }
+      link {
+        url
+        type
+        uid
+      }
+      link_label {
+        raw
+      }
+    }
+  }
+  fragment HomepageDataBodyImageGallery on PrismicHomepageDataBodyImageGallery {
+    primary {
+      gallery_title {
+        raw
+      }
+    }
+    items {
+      image {
+        url
+        alt
+      }
+      image_description {
+        raw
+      }
+      link {
+        url
+        type
+        uid
+      }
+      link_label {
+        raw
+      }
+    }
+  }
+`

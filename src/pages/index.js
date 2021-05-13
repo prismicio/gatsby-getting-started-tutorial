@@ -53,80 +53,14 @@ export const query = graphql`
           url
         }
         body {
-          ... on PrismicHomepageDataBodyText {
+          ... on PrismicSliceType {
             slice_type
-            primary {
-              columns
-              content {
-                raw
-              }
-            }
           }
-          ... on PrismicHomepageDataBodyQuote {
-            slice_type
-            primary {
-              quote {
-                raw
-              }
-            }
-          }
-          ... on PrismicHomepageDataBodyFullWidthImage {
-            slice_type
-            primary {
-              full_width_image {
-                url
-                alt
-              }
-            }
-          }
-          ... on PrismicHomepageDataBodyImageGallery {
-            slice_type
-            primary {
-              gallery_title {
-                raw
-              }
-            }
-            items {
-              image {
-                url
-                alt
-              }
-              image_description {
-                raw
-              }
-              link {
-                url
-                type
-                uid
-              }
-              link_label {
-                raw
-              }
-            }
-          }
-          ... on PrismicHomepageDataBodyImageHighlight {
-            slice_type
-            primary {
-              featured_image {
-                url
-                alt
-              }
-              title {
-                raw
-              }
-              description {
-                raw
-              }
-              link {
-                url
-                type
-                uid
-              }
-              link_label {
-                raw
-              }
-            }
-          }
+          ...HomepageDataBodyText
+          ...HomepageDataBodyQuote
+          ...HomepageDataBodyFullWidthImage
+          ...HomepageDataBodyImageGallery
+          ...HomepageDataBodyImageHighlight
         }
       }
     }

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
 import { linkResolver } from './../../utils/linkResolver'
@@ -18,3 +19,22 @@ export const Text = ({ slice }) => {
     </section>
   )
 }
+
+export const query = graphql`
+  fragment PageDataBodyText on PrismicPageDataBodyText {
+    primary {
+      columns
+      content {
+        raw
+      }
+    }
+  }
+  fragment HomepageDataBodyText on PrismicHomepageDataBodyText {
+    primary {
+      columns
+      content {
+        raw
+      }
+    }
+  }
+`

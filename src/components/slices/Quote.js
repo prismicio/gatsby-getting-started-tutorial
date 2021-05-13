@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
 export const Quote = ({ slice }) => (
@@ -6,3 +7,20 @@ export const Quote = ({ slice }) => (
     <blockquote>{RichText.asText(slice.primary.quote.raw)}</blockquote>
   </section>
 )
+
+export const query = graphql`
+  fragment PageDataBodyQuote on PrismicPageDataBodyQuote {
+    primary {
+      quote {
+        raw
+      }
+    }
+  }
+  fragment HomepageDataBodyQuote on PrismicHomepageDataBodyQuote {
+    primary {
+      quote {
+        raw
+      }
+    }
+  }
+`

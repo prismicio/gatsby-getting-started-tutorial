@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
 export const ImageHighlight = ({ slice }) => (
@@ -21,3 +21,50 @@ export const ImageHighlight = ({ slice }) => (
     </div>
   </section>
 )
+
+export const query = graphql`
+  fragment PageDataBodyImageHighlight on PrismicPageDataBodyImageHighlight {
+    primary {
+      featured_image {
+        url
+        alt
+      }
+      title {
+        raw
+      }
+      description {
+        raw
+      }
+      link {
+        url
+        type
+        uid
+      }
+      link_label {
+        raw
+      }
+    }
+  }
+  fragment HomepageDataBodyImageHighlight on PrismicHomepageDataBodyImageHighlight {
+    primary {
+      featured_image {
+        url
+        alt
+      }
+      title {
+        raw
+      }
+      description {
+        raw
+      }
+      link {
+        url
+        type
+        uid
+      }
+      link_label {
+        raw
+      }
+    }
+  }
+`

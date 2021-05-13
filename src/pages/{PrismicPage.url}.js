@@ -12,6 +12,7 @@ const capitalizeFirstLetter = (input) => {
   return input[0].toUpperCase() + input.slice(1)
 }
 
+// TODO: Add a Title field to page.json rather than use the UID.
 const PageTemplate = ({ data }) => {
   if (!data) return null
 
@@ -32,79 +33,14 @@ export const query = graphql`
       uid
       data {
         body {
-          ... on PrismicPageDataBodyText {
+          ... on PrismicSliceType {
             slice_type
-            primary {
-              columns
-              content {
-                raw
-              }
-            }
           }
-          ... on PrismicPageDataBodyQuote {
-            slice_type
-            primary {
-              quote {
-                raw
-              }
-            }
-          }
-          ... on PrismicPageDataBodyFullWidthImage {
-            slice_type
-            primary {
-              full_width_image {
-                url
-              }
-            }
-          }
-          ... on PrismicPageDataBodyImageGallery {
-            slice_type
-            primary {
-              gallery_title {
-                raw
-              }
-            }
-            items {
-              image {
-                url
-                alt
-              }
-              image_description {
-                raw
-              }
-              link {
-                url
-                type
-                uid
-              }
-              link_label {
-                raw
-              }
-            }
-          }
-          ... on PrismicPageDataBodyImageHighlight {
-            slice_type
-            primary {
-              featured_image {
-                url
-                alt
-              }
-              title {
-                raw
-              }
-              description {
-                raw
-              }
-              link {
-                url
-                type
-                uid
-              }
-              link_label {
-                raw
-              }
-            }
-          }
+          ...PageDataBodyText
+          ...PageDataBodyQuote
+          ...PageDataBodyFullWidthImage
+          ...PageDataBodyImageGallery
+          ...PageDataBodyImageHighlight
         }
       }
     }
