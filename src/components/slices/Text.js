@@ -3,7 +3,7 @@ import { RichText } from 'prismic-reactjs'
 
 import { linkResolver } from './../../utils/linkResolver'
 
-const Text = ({ slice }) => {
+export const Text = ({ slice }) => {
   const columnClass =
     slice.primary.columns === '2 Columns'
       ? 'text-section-2col'
@@ -18,5 +18,3 @@ const Text = ({ slice }) => {
     </section>
   )
 }
-
-export default Text

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
-const Header = ({ isHomepage }) => {
+export const Header = ({ isHomepage }) => {
   const queryData = useStaticQuery(graphql`
     {
       prismicNavigation {
@@ -48,5 +48,3 @@ const Header = ({ isHomepage }) => {
     </header>
   )
 }
-
-export default Header

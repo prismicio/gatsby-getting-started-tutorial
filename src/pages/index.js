@@ -5,10 +5,10 @@ import { RichText } from 'prismic-reactjs'
 
 import { repositoryConfigs } from '../utils/prismicPreviews'
 
-import Layout from '../components/Layout'
-import Seo from '../components/Seo'
+import { Layout } from '../components/Layout'
+import { Seo } from '../components/Seo'
 import { HomepageBanner } from '../components/HomepageBanner'
-import SliceZone from '../components/SliceZone'
+import { SliceZone } from '../components/SliceZone'
 
 const HomePage = ({ data }) => {
   if (!data) return null

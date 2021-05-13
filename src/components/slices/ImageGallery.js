@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
-const ImageGallery = ({ slice }) => {
+export const ImageGallery = ({ slice }) => {
   return (
     <section className="image-gallery content-section">
       <RichText render={slice.primary.gallery_title.raw} />
@@ -22,5 +22,3 @@ const ImageGallery = ({ slice }) => {
     </section>
   )
 }
-
-export default ImageGallery

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const FullWidthImage = ({ slice }) => (
+export const FullWidthImage = ({ slice }) => (
   <section className="full-width-image content-section">
     <img
       src={slice.primary.full_width_image.url}
@@ -8,5 +8,3 @@ const FullWidthImage = ({ slice }) => (
     />
   </section>
 )
-
-export default FullWidthImage

@@ -4,9 +4,9 @@ import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
 import { repositoryConfigs } from '../utils/prismicPreviews'
 
-import Layout from '../components/Layout'
-import Seo from '../components/Seo'
-import SliceZone from '../components/SliceZone'
+import { Layout } from '../components/Layout'
+import { Seo } from '../components/Seo'
+import { SliceZone } from '../components/SliceZone'
 
 const capitalizeFirstLetter = (input) => {
   return input[0].toUpperCase() + input.slice(1)

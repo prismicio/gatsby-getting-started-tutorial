@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import prismicLogo from '../images/logo-prismic.svg'
 
-const Footer = () => (
+export const Footer = () => (
   <footer>
     <p>
       Proudly published with{' '}
@@ -16,5 +16,3 @@ const Footer = () => (
     </p>
   </footer>
 )
-
-export default Footer
