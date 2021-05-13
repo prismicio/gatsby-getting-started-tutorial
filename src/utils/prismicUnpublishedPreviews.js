@@ -9,8 +9,8 @@ import { componentResolverFromMap } from 'gatsby-plugin-prismic-previews'
 
 import { linkResolver } from './linkResolver'
 
-import PageTemplate from '../templates/page'
-import HomeTemplate from '../pages/index'
+import HomePage from '../pages/index'
+import PageTemplate from '../pages/{PrismicPage.url}'
 
 /**
  * Prismic preview configuration for each repository in your app. This set of
@@ -27,8 +27,8 @@ export const unpublishedRepositoryConfigs = [
     repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
     linkResolver,
     componentResolver: componentResolverFromMap({
+      homepage: HomePage,
       page: PageTemplate,
-      homepage: HomeTemplate,
     }),
   },
 ]
