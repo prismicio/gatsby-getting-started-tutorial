@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 
 const FullWidthImage = ({ slice }) => (
   <section className="full-width-image content-section">

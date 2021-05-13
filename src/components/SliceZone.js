@@ -1,4 +1,5 @@
-import React from 'react'
+import * as React from 'react'
+
 import FullWidthImage from './slices/FullWidthImage'
 import ImageGallery from './slices/ImageGallery'
 import ImageHighlight from './slices/ImageHighlight'

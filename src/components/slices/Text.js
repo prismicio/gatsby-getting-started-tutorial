@@ -1,5 +1,6 @@
-import React from 'react'
+import * as React from 'react'
 import { RichText } from 'prismic-reactjs'
+
 import linkResolver from './../../utils/linkResolver'
 
 const Text = ({ slice }) => {

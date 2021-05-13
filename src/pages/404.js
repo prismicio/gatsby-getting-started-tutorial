@@ -3,7 +3,9 @@ import {
   withPrismicUnpublishedPreview,
   componentResolverFromMap,
 } from 'gatsby-plugin-prismic-previews'
+
 import linkResolver from '../utils/linkResolver'
+
 import PageTemplate from './../templates/Page'
 import HomeTemplate from './../pages/index'
 

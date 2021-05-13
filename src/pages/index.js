@@ -1,11 +1,13 @@
-import React from 'react'
+import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
+
+import linkResolver from '../utils/linkResolver'
+
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import HomepageBanner from '../components/HomepageBanner'
 import SliceZone from '../components/SliceZone'
-import linkResolver from '../utils/linkResolver'
 
 const HomeTemplate = ({ data }) => {
   if (!data) return null

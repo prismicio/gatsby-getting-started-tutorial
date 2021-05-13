@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { RichText } from 'prismic-reactjs'
 
 const Quote = ({ slice }) => (
