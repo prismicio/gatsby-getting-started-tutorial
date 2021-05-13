@@ -6,6 +6,7 @@
     "gatsby": "^3.5.0",
     "gatsby-image": "^3.5.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-image": "^1.5.0",
     "gatsby-plugin-manifest": "^3.5.0",
     "gatsby-plugin-prismic-previews": "^4.0.0-alpha.8",
     "gatsby-plugin-react-helmet": "^4.5.0",
