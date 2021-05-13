@@ -9,7 +9,7 @@ import { componentResolverFromMap } from 'gatsby-plugin-prismic-previews'
 
 import { linkResolver } from './linkResolver'
 
-import PageTemplate from '../templates/Page'
+import PageTemplate from '../templates/page'
 import HomeTemplate from '../pages/index'
 
 /**
