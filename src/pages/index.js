@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
-import linkResolver from '../utils/linkResolver'
+import { repositoryConfigs } from '../utils/prismicPreviews'
 
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
@@ -133,9 +133,4 @@ export const query = graphql`
   }
 `
 
-export default withPrismicPreview(HomeTemplate, [
-  {
-    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
-    linkResolver,
-  },
-])
+export default withPrismicPreview(HomeTemplate, repositoryConfigs)
