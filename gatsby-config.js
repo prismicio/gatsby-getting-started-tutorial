@@ -1,4 +1,3 @@
-const linkResolver = require('./src/utils/linkResolver')
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -13,14 +12,13 @@ module.exports = {
       resolve: 'gatsby-plugin-prismic-previews',
       options: {
         repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
-        toolbar: 'new',
       },
     },
     {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
-        linkResolver: (doc) => linkResolver(doc),
+        linkResolver: require('./src/utils/linkResolver').linkResolver,
         schemas: {
           homepage: require('./custom_types/homepage.json'),
           navigation: require('./custom_types/navigation.json'),
@@ -28,6 +26,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',

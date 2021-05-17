@@ -1,11 +1,31 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+import * as React from 'react'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
-const Header = ({ isHomepage, navigation }) => {
-  if (!navigation) return null
-  const homepageClass = isHomepage ? 'homepage-header' : ''
+export const Header = ({ isHomepage }) => {
+  const queryData = useStaticQuery(graphql`
+    {
+      prismicNavigation {
+        data {
+          top_navigation {
+            link {
+              type
+              uid
+              url
+            }
+            link_label {
+              raw
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const navigation = queryData.prismicNavigation
   const topNav = navigation.data.top_navigation
+
+  const homepageClass = isHomepage ? 'homepage-header' : ''
 
   return (
     <header className={`site-header ${homepageClass}`}>
@@ -28,22 +48,3 @@ const Header = ({ isHomepage, navigation }) => {
     </header>
   )
 }
-
-export const query = graphql`
-  fragment HeaderQuery on PrismicNavigation {
-    data {
-      top_navigation {
-        link {
-          type
-          uid
-          url
-        }
-        link_label {
-          raw
-        }
-      }
-    }
-  }
-`
-
-export default Header

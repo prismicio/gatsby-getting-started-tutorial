@@ -1,11 +1,12 @@
-import React from 'react'
-import FullWidthImage from './slices/FullWidthImage'
-import ImageGallery from './slices/ImageGallery'
-import ImageHighlight from './slices/ImageHighlight'
-import Quote from './slices/Quote'
-import Text from './slices/Text'
+import * as React from 'react'
 
-const SliceZone = ({ sliceZone }) => {
+import { FullWidthImage } from '../slices/FullWidthImage'
+import { ImageGallery } from '../slices/ImageGallery'
+import { ImageHighlight } from '../slices/ImageHighlight'
+import { Quote } from '../slices/Quote'
+import { Text } from '../slices/Text'
+
+export const SliceZone = ({ sliceZone }) => {
   const sliceComponents = {
     full_width_image: FullWidthImage,
     image_gallery: ImageGallery,
@@ -24,5 +25,3 @@ const SliceZone = ({ sliceZone }) => {
 
   return <main className="container">{sliceZoneContent}</main>
 }
-
-export default SliceZone

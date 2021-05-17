@@ -28,10 +28,10 @@ This will run the build of your website and launch a local server to see the sit
 
 ## Built With
 
-* [Prismic](https://prismic.io/) - API-based content management system
-* [Gatsby](https://www.gatsbyjs.org/) - React based framework for building websites
+- [Prismic](https://prismic.io/) - API-based content management system
+- [Gatsby](https://www.gatsbyjs.org/) - React based framework for building websites
 
-## License 
+## License
 
 This software is licensed under the Apache 2 license, quoted below.
 
