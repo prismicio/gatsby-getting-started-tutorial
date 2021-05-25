@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { withPrismicUnpublishedPreview } from 'gatsby-plugin-prismic-previews'
-
-import { unpublishedRepositoryConfigs } from '../utils/prismicUnpublishedPreviews'
+import { withPrismicUnpublishedPreview, componentResolverFromMap } from 'gatsby-plugin-prismic-previews'
+import { linkResolver } from './../utils/linkResolver'
+import HomePage from './index'
+import PageTemplate from './{PrismicPage.url}'
 
 const NotFoundPage = () => {
   return (
@@ -13,5 +14,14 @@ const NotFoundPage = () => {
 
 export default withPrismicUnpublishedPreview(
   NotFoundPage,
-  unpublishedRepositoryConfigs,
+  [
+    {
+      repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+      linkResolver,
+      componentResolver: componentResolverFromMap({
+        homepage: HomePage,
+        page: PageTemplate,
+      }),
+    },
+  ],
 )

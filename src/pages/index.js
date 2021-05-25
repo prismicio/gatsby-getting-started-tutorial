@@ -2,9 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { RichText } from 'prismic-reactjs'
-
-import { repositoryConfigs } from '../utils/prismicPreviews'
-
+import { linkResolver } from './../utils/linkResolver'
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { HomepageBanner } from '../components/HomepageBanner'
@@ -12,7 +10,6 @@ import { SliceZone } from '../components/SliceZone'
 
 const HomePage = ({ data }) => {
   if (!data) return null
-
   const doc = data.prismicHomepage.data
 
   return (
@@ -67,4 +64,9 @@ export const query = graphql`
   }
 `
 
-export default withPrismicPreview(HomePage, repositoryConfigs)
+export default withPrismicPreview(HomePage, [
+  {
+    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+    linkResolver,
+  },
+])
