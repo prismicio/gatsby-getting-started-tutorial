@@ -1,4 +1,7 @@
 {
+  "document_display_name": [
+    { "type": "heading1", "content": { "text": "Homepage", "spans": [] } }
+  ],
   "top_navigation": [
     {
       "link": {
@@ -27,9 +30,6 @@
         { "type": "paragraph", "content": { "text": "More Info", "spans": [] } }
       ]
     }
-  ],
-  "document_display_name": [
-    { "type": "heading1", "content": { "text": "Navigation", "spans": [] } }
   ],
   "document_display_name_TYPE": "StructuredText",
   "document_display_name_POSITION": 0,
