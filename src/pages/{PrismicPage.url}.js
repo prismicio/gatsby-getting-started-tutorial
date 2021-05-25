@@ -8,11 +8,6 @@ import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { SliceZone } from '../components/SliceZone'
 
-const capitalizeFirstLetter = (input) => {
-  return input[0].toUpperCase() + input.slice(1)
-}
-
-// TODO: Add a Title field to page.json rather than use the UID.
 const PageTemplate = ({ data }) => {
   if (!data) return null
 
@@ -20,7 +15,7 @@ const PageTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title={capitalizeFirstLetter(page.uid)} />
+      <Seo title={page.data.document_display_name.text} />
       <SliceZone sliceZone={page.data.body} />
     </Layout>
   )
@@ -32,6 +27,9 @@ export const query = graphql`
       _previewable
       uid
       data {
+        document_display_name {
+          text
+        }
         body {
           ... on PrismicSliceType {
             slice_type
