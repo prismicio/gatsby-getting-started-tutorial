@@ -67,10 +67,7 @@
               "columns": {
                 "type": "Select",
                 "config": {
-                  "options": [
-                    "1 Column",
-                    "2 Columns"
-                  ],
+                  "options": ["1 Column", "2 Columns"],
                   "default_value": "1 Column",
                   "label": "columns"
                 }

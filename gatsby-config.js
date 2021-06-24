@@ -26,10 +26,7 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

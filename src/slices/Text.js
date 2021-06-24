@@ -2,7 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
-import { linkResolver } from '../utils/linkResolver'
+import { CustomLink } from '../utils/CustomLink'
 
 export const Text = ({ slice }) => {
   const columnClass =
@@ -14,7 +14,7 @@ export const Text = ({ slice }) => {
     <section className={`content-section ${columnClass}`}>
       <RichText
         render={slice.primary.content.raw}
-        linkResolver={linkResolver}
+        serializeHyperlink={CustomLink}
       />
     </section>
   )
