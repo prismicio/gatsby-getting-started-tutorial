@@ -4,6 +4,7 @@ module.exports = {
     description: 'Learn how to integrate Prismic into your Gatsby project.',
   },
   plugins: [
+    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
