@@ -9,8 +9,6 @@ export const Header = ({ isHomepage }) => {
         data {
           top_navigation {
             link {
-              type
-              uid
               url
             }
             link_label {
