@@ -1,7 +1,6 @@
 {
   "name": "gatsby-getting-started-tutorial",
   "description": "A simple tutorial to get started with Prismic & Gatsby.js",
-  "version": "0.1.0",
   "dependencies": {
     "gatsby": "^3.5.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
