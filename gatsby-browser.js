@@ -1,6 +1,12 @@
 import * as React from 'react'
-import { PreviewStoreProvider } from 'gatsby-source-prismic'
+import { PrismicPreviewProvider } from 'gatsby-plugin-prismic-previews'
+
+import 'gatsby-plugin-prismic-previews/dist/styles.css'
+
+import './src/styles/reset.css'
+import './src/styles/common.css'
+import './src/styles/style.css'
 
 export const wrapRootElement = ({ element }) => (
-  <PreviewStoreProvider initialEnabled={true}>{element}</PreviewStoreProvider>
+  <PrismicPreviewProvider>{element}</PrismicPreviewProvider>
 )

@@ -1,4 +1,6 @@
-const linkResolver = require('./src/utils/linkResolver')
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -7,23 +9,25 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-prismic-previews',
+      options: {
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+      },
+    },
+    {
       resolve: 'gatsby-source-prismic',
       options: {
-        /* Make sure that you update the repositoryName 
-        * to match the name of your Prismic repository */
-        repositoryName: 'your-repo-name',
-        linkResolver: () => linkResolver,
-        prismicToolbar: true,
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+        linkResolver: require('./src/utils/LinkResolver').linkResolver,
         schemas: {
-           homepage: require("./custom_types/homepage.json"),
-           navigation: require("./custom_types/navigation.json"),
-           page: require("./custom_types/page.json"),
+          homepage: require('./custom_types/homepage.json'),
+          navigation: require('./custom_types/navigation.json'),
+          page: require('./custom_types/page.json'),
         },
       },
     },
+    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -40,9 +44,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: [
-          `Lato\:400,400,700,700i,900`,`Amiri\:400,400,700,700i`
-        ],
+        fonts: [`Lato\:400,400,700,700i,900`, `Amiri\:400,400,700,700i`],
       },
     },
   ],

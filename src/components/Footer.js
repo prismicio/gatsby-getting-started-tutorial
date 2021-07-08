@@ -1,10 +1,14 @@
-import React from 'react'
+import * as React from 'react'
+
 import prismicLogo from '../images/logo-prismic.svg'
 
-const Footer = () => (
+export const Footer = () => (
   <footer>
     <p>
-      Proudly published with <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">Prismic</a>
+      Proudly published with{' '}
+      <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
+        Prismic
+      </a>
       <br />
       <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
         <img className="footer-logo" src={prismicLogo} alt="Prismic logo" />
@@ -12,5 +16,3 @@ const Footer = () => (
     </p>
   </footer>
 )
-
-export default Footer
