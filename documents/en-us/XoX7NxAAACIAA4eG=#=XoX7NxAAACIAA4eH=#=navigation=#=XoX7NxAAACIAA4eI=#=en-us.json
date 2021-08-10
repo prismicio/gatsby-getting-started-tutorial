@@ -1,4 +1,7 @@
 {
+  "document_display_name": [
+    { "type": "heading1", "content": { "text": "Homepage", "spans": [] } }
+  ],
   "top_navigation": [
     {
       "link": {
@@ -28,11 +31,8 @@
       ]
     }
   ],
-  "prismic_title": [
-    { "type": "heading1", "content": { "text": "Navigation", "spans": [] } }
-  ],
-  "prismic_title_TYPE": "StructuredText",
-  "prismic_title_POSITION": 0,
+  "document_display_name_TYPE": "StructuredText",
+  "document_display_name_POSITION": 0,
   "top_navigation_TYPE": "Group",
   "top_navigation_POSITION": 1,
   "top_navigation.link_TYPE": "Link",

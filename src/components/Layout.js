@@ -2,13 +2,10 @@ import * as React from 'react'
 
 import { Header } from './Header'
 import { Footer } from './Footer'
-import './../styles/reset.css'
-import './../styles/common.css'
-import './../styles/style.css'
 
-export const Layout = ({ isHomepage, children, navigation }) => (
+export const Layout = ({ isHomepage, children }) => (
   <>
-    <Header isHomepage={isHomepage} navigation={navigation} />
+    <Header isHomepage={isHomepage} />
     {children}
     <Footer />
   </>

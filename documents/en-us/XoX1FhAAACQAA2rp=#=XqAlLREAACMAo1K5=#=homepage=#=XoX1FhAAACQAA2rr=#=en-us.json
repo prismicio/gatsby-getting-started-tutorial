@@ -1,9 +1,21 @@
 {
-  "prismic_title": [
-    { "type": "heading1", "content": { "text": "Homepage", "spans": [] } }
+  "document_display_name": [
+    {
+      "type": "heading1",
+      "content": {
+        "text": "Homepage",
+        "spans": []
+      }
+    }
   ],
   "banner_title": [
-    { "type": "heading2", "content": { "text": "John Doe", "spans": [] } }
+    {
+      "type": "heading2",
+      "content": {
+        "text": "John Doe",
+        "spans": []
+      }
+    }
   ],
   "banner_description": [
     {
@@ -19,7 +31,13 @@
     "wioUrl": "wio://documents/XoX2rhAAACEAA3Jf"
   },
   "banner_link_label": [
-    { "type": "paragraph", "content": { "text": "Learn More", "spans": [] } }
+    {
+      "type": "paragraph",
+      "content": {
+        "text": "Learn More",
+        "spans": []
+      }
+    }
   ],
   "banner_background": {
     "origin": {
@@ -34,7 +52,10 @@
     "edit": {
       "background": "#fff",
       "zoom": 0.4084967320261438,
-      "crop": { "x": 0, "y": 0 }
+      "crop": {
+        "x": 0,
+        "y": 0
+      }
     },
     "credits": null,
     "alt": null,
@@ -45,7 +66,9 @@
     {
       "key": "text$c926cd9c-2aae-4b1b-825b-9b73deb69211",
       "value": {
-        "repeat": [{}],
+        "repeat": [
+          {}
+        ],
         "non-repeat": {
           "columns": "2 Columns",
           "content": [
@@ -84,7 +107,9 @@
     {
       "key": "full_width_image$70591cb9-7927-48c1-9f24-f40e7b5297c5",
       "value": {
-        "repeat": [{}],
+        "repeat": [
+          {}
+        ],
         "non-repeat": {
           "full_width_image": {
             "origin": {
@@ -99,7 +124,10 @@
             "edit": {
               "background": "#fff",
               "zoom": 0.28857479387514723,
-              "crop": { "x": 0, "y": -138 }
+              "crop": {
+                "x": 0,
+                "y": -138
+              }
             },
             "credits": null,
             "alt": "Ski lift chairs",
@@ -112,7 +140,9 @@
     {
       "key": "image_highlight$47a84f88-0076-48d6-bc67-a470d32576bc",
       "value": {
-        "repeat": [{}],
+        "repeat": [
+          {}
+        ],
         "non-repeat": {
           "featured_image": {
             "origin": {
@@ -127,7 +157,10 @@
             "edit": {
               "background": "#fff",
               "zoom": 0.1877582644628099,
-              "crop": { "x": 0, "y": -42 }
+              "crop": {
+                "x": 0,
+                "y": -42
+              }
             },
             "credits": null,
             "alt": "Mountain range",
@@ -159,7 +192,10 @@
           "link_label": [
             {
               "type": "paragraph",
-              "content": { "text": "LEARN MORE", "spans": [] }
+              "content": {
+                "text": "LEARN MORE",
+                "spans": []
+              }
             }
           ]
         }
@@ -168,7 +204,9 @@
     {
       "key": "text$13471ac3-0199-4736-9a0d-f43596ace3a8",
       "value": {
-        "repeat": [{}],
+        "repeat": [
+          {}
+        ],
         "non-repeat": {
           "columns": "1 Column",
           "content": [
@@ -186,7 +224,9 @@
     {
       "key": "quote$caff1fb5-6af1-4ccf-99de-23aaa042a669",
       "value": {
-        "repeat": [{}],
+        "repeat": [
+          {}
+        ],
         "non-repeat": {
           "quote": [
             {
@@ -218,7 +258,10 @@
               "edit": {
                 "background": "#fff",
                 "zoom": 0.26113505747126436,
-                "crop": { "x": 0, "y": -3 }
+                "crop": {
+                  "x": 0,
+                  "y": -3
+                }
               },
               "credits": null,
               "alt": null,
@@ -241,7 +284,10 @@
             "link_label": [
               {
                 "type": "paragraph",
-                "content": { "text": "Learn More", "spans": [] }
+                "content": {
+                  "text": "Learn More",
+                  "spans": []
+                }
               }
             ]
           },
@@ -259,7 +305,10 @@
               "edit": {
                 "background": "#fff",
                 "zoom": 0.14601325567383008,
-                "crop": { "x": 0, "y": -41 }
+                "crop": {
+                  "x": 0,
+                  "y": -41
+                }
               },
               "credits": null,
               "alt": null,
@@ -282,7 +331,10 @@
             "link_label": [
               {
                 "type": "paragraph",
-                "content": { "text": "More info", "spans": [] }
+                "content": {
+                  "text": "More info",
+                  "spans": []
+                }
               }
             ]
           }
@@ -291,15 +343,18 @@
           "gallery_title": [
             {
               "type": "heading2",
-              "content": { "text": "Lorem ipsum dolor sit amet", "spans": [] }
+              "content": {
+                "text": "Lorem ipsum dolor sit amet",
+                "spans": []
+              }
             }
           ]
         }
       }
     }
   ],
-  "prismic_title_TYPE": "StructuredText",
-  "prismic_title_POSITION": 0,
+  "document_display_name_TYPE": "StructuredText",
+  "document_display_name_POSITION": 0,
   "banner_title_TYPE": "StructuredText",
   "banner_title_POSITION": 1,
   "banner_description_TYPE": "StructuredText",
@@ -350,6 +405,8 @@
   "body.image_highlight.non-repeat.link_POSITION": 24,
   "body.image_highlight.non-repeat.link_label_TYPE": "StructuredText",
   "body.image_highlight.non-repeat.link_label_POSITION": 25,
-  "slugs_INTERNAL": ["homepage"],
+  "slugs_INTERNAL": [
+    "homepage"
+  ],
   "uids_INTERNAL": []
 }
