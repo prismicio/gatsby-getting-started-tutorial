@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
-
-import { CustomLink } from '../utils/CustomLink'
+import { PrismicRichText } from '@prismicio/react'
 
 export const Text = ({ slice }) => {
   const columnClass =
@@ -12,10 +10,7 @@ export const Text = ({ slice }) => {
 
   return (
     <section className={`content-section ${columnClass}`}>
-      <RichText
-        render={slice.primary.content.raw}
-        serializeHyperlink={CustomLink}
-      />
+      <PrismicRichText field={slice.primary.content.richText} />
     </section>
   )
 }
@@ -25,7 +20,7 @@ export const query = graphql`
     primary {
       columns
       content {
-        raw
+        richText
       }
     }
   }
@@ -33,7 +28,7 @@ export const query = graphql`
     primary {
       columns
       content {
-        raw
+        richText
       }
     }
   }

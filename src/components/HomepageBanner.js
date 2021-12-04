@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { PrismicLink } from '@prismicio/react'
 
 export const HomepageBanner = ({
   title,
@@ -17,9 +17,9 @@ export const HomepageBanner = ({
     <div className="banner-content container">
       <h2 className="banner-title">{title}</h2>
       <p className="banner-description">{description}</p>
-      <Link to={linkUrl} className="banner-button">
+      <PrismicLink href={linkUrl} className="banner-button">
         {linkLabel}
-      </Link>
+      </PrismicLink>
     </div>
   </section>
 )

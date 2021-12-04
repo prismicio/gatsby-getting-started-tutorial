@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { PrismicLink } from '@prismicio/react'
+
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 
@@ -77,7 +78,7 @@ const About = () => (
               neque, <em>aliquet vel</em>, dapibus id, mattis vel, nisi.
             </p>
             <p className="gallery-link">
-              <Link to="/more-info">Learn More</Link>
+              <PrismicLink href="/more-info">Learn More</PrismicLink>
             </p>
           </div>
           <div className="gallery-item">
@@ -93,6 +94,5 @@ const About = () => (
     </main>
   </Layout>
 )
-
 
 export default About

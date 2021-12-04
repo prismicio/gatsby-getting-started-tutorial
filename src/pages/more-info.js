@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { PrismicLink } from '@prismicio/react'
+
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 
@@ -23,7 +24,7 @@ const MoreInfo = () => (
         <h2>Morbi interdum mollis sapien</h2>
         <p>
           Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet,{' '}
-          <Link to="/">lectus arcu pulvinar risus</Link>, vitae{' '}
+          <PrismicLink href="/">lectus arcu pulvinar risus</PrismicLink>, vitae{' '}
           <strong>facilisis libero dolor a purus</strong>. Sed vel lacus. Mauris
           nibh felis, <em>adipiscing varius</em>, adipiscing in,{' '}
           <strong>
@@ -80,3 +81,4 @@ const MoreInfo = () => (
 )
 
 export default MoreInfo
+

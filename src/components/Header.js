@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
+import { graphql, useStaticQuery } from 'gatsby'
+import { PrismicLink } from '@prismicio/react'
 
 export const Header = ({ isHomepage }) => {
   const queryData = useStaticQuery(graphql`
@@ -12,7 +12,7 @@ export const Header = ({ isHomepage }) => {
               url
             }
             link_label {
-              raw
+              text
             }
           }
         }
@@ -27,17 +27,17 @@ export const Header = ({ isHomepage }) => {
 
   return (
     <header className={`site-header ${homepageClass}`}>
-      <Link to="/">
+      <PrismicLink href="/">
         <div className="logo">Example Site</div>
-      </Link>
+      </PrismicLink>
       <nav>
         <ul>
           {topNav.map((navItem, index) => {
             return (
               <li key={`link-${index}`}>
-                <Link to={navItem.link.url}>
-                  {RichText.asText(navItem.link_label.raw)}
-                </Link>
+                <PrismicLink href={navItem.link.url}>
+                  {navItem.link_label.text}
+                </PrismicLink>
               </li>
             )
           })}
