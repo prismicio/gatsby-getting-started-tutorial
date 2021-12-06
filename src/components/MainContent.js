@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { PrismicLink } from '@prismicio/react'
 
 import skiLiftChairs from '../images/ski-lift-chairs.jpeg'
 import mountainRange from '../images/mountain-range.jpeg'
@@ -40,7 +40,7 @@ export const MainContent = () => (
           aliquet nibh nec urna.
         </h3>
         <p>
-          <Link to="/about">LEARN MORE</Link>
+          <PrismicLink href="/about">LEARN MORE</PrismicLink>
         </p>
       </div>
       <div className="highlight-right">
@@ -77,7 +77,7 @@ export const MainContent = () => (
             adipiscing, commodo quis, gravida id, est.
           </p>
           <p className="gallery-link">
-            <Link to="/about">Learn More</Link>
+            <PrismicLink href="/about">Learn More</PrismicLink>
           </p>
         </div>
         <div className="gallery-item">
@@ -88,7 +88,7 @@ export const MainContent = () => (
             <em>aliquet vel</em>, dapibus id, mattis vel, nisi.
           </p>
           <p className="gallery-link">
-            <Link to="/more-info">More Info</Link>
+            <PrismicLink href="/more-info">More Info</PrismicLink>
           </p>
         </div>
       </div>

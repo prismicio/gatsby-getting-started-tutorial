@@ -1,19 +1,21 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import { SliceZone } from '@prismicio/react'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { linkResolver } from '../utils/LinkResolver'
+
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
-import { SliceZone } from '../components/SliceZone'
+
+import { components } from '../slices'
 
 const PageTemplate = ({ data }) => {
   if (!data) return null
- const page = data.prismicPage
+  const page = data.prismicPage
 
   return (
     <Layout>
       <Seo title={page.data.document_display_name.text} />
-      <SliceZone sliceZone={page.data.body} />
+      <SliceZone slices={page.data.body} components={components} />
     </Layout>
   )
 }
@@ -41,9 +43,4 @@ export const query = graphql`
   }
 `
 
-export default withPrismicPreview(PageTemplate, [
-  {
-    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
-    linkResolver,
-  },
-])
+export default withPrismicPreview(PageTemplate)

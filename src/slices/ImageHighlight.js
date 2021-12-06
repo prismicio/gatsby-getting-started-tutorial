@@ -1,16 +1,16 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
+import { graphql } from 'gatsby'
+import { PrismicLink, PrismicRichText } from '@prismicio/react'
 
 export const ImageHighlight = ({ slice }) => (
   <section className="highlight content-section">
     <div className="highlight-left">
-      <RichText render={slice.primary.title.raw} />
-      <RichText render={slice.primary.description.raw} />
+      <PrismicRichText field={slice.primary.title.richText} />
+      <PrismicRichText field={slice.primary.description.richText} />
       <p>
-        <Link to={slice.primary.link.url}>
-          {RichText.asText(slice.primary.link_label.raw)}
-        </Link>
+        <PrismicLink href={slice.primary.link.url}>
+          {slice.primary.link_label.text}
+        </PrismicLink>
       </p>
     </div>
     <div className="highlight-right">
@@ -30,10 +30,10 @@ export const query = graphql`
         alt
       }
       title {
-        raw
+        richText
       }
       description {
-        raw
+        richText
       }
       link {
         url
@@ -41,7 +41,7 @@ export const query = graphql`
         uid
       }
       link_label {
-        raw
+        text
       }
     }
   }
@@ -52,10 +52,10 @@ export const query = graphql`
         alt
       }
       title {
-        raw
+        richText
       }
       description {
-        raw
+        richText
       }
       link {
         url
@@ -63,7 +63,7 @@ export const query = graphql`
         uid
       }
       link_label {
-        raw
+        text
       }
     }
   }

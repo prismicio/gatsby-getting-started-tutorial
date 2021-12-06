@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
-import { RichText } from 'prismic-reactjs'
-import { linkResolver } from '../utils/LinkResolver'
+import { SliceZone } from '@prismicio/react'
+
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { HomepageBanner } from '../components/HomepageBanner'
-import { SliceZone } from '../components/SliceZone'
+import { components } from '../slices'
 
 const HomeTemplate = ({ data }) => {
   if (!data) return null
@@ -16,13 +16,13 @@ const HomeTemplate = ({ data }) => {
     <Layout isHomepage={true}>
       <Seo title="Home" />
       <HomepageBanner
-        title={RichText.asText(doc.banner_title.raw)}
-        description={RichText.asText(doc.banner_description.raw)}
+        title={doc.banner_title.text}
+        description={doc.banner_description.text}
         linkUrl={doc.banner_link.url}
-        linkLabel={RichText.asText(doc.banner_link_label.raw)}
+        linkLabel={doc.banner_link_label.text}
         backgroundUrl={doc.banner_background.url}
       />
-      <SliceZone sliceZone={doc.body} />
+      <SliceZone slices={doc.body} components={components} />
     </Layout>
   )
 }
@@ -33,10 +33,10 @@ export const query = graphql`
       _previewable
       data {
         banner_title {
-          raw
+          text
         }
         banner_description {
-          raw
+          text
         }
         banner_link {
           url
@@ -44,7 +44,7 @@ export const query = graphql`
           uid
         }
         banner_link_label {
-          raw
+          text
         }
         banner_background {
           url
@@ -64,9 +64,4 @@ export const query = graphql`
   }
 `
 
-export default withPrismicPreview(HomeTemplate, [
-  {
-    repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
-    linkResolver,
-  },
-])
+export default withPrismicPreview(HomeTemplate)
